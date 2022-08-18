@@ -6,6 +6,8 @@ import Login from "./Auth/Login"
 import Forgot from "./Auth/Forgot"
 import SetPassword from "./Auth/Forgot/SetPassword"
 import MovieDetail from "./Movies/MovieDetail"
+import ProfileDetail from "./Profile/Detail"
+import OrderHistory from "./Profile/OrderHistory"
 const App = () => {
   return (
     <View>
@@ -15,7 +17,9 @@ const App = () => {
       {/* <Login /> */}
       {/* <Forgot /> */}
       {/* <SetPassword /> */}
-      <MovieDetail />
+      {/* <MovieDetail /> */}
+      {/* <ProfileDetail /> */}
+      <OrderHistory />
     </View>
   )
 }

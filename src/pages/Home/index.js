@@ -1,5 +1,5 @@
-import React from 'react'
-import { ScrollView, View, Image, Text, TextInput } from "react-native"
+import React, { useState, useEffect } from 'react'
+import { FlatList, ScrollView, View, Image, Text, TextInput, TouchableOpacity } from "react-native"
 import logo from '../../assets/image/bg.png'
 import spider from '../../assets/image/spider.png'
 import lion from '../../assets/image/lion.png'
@@ -14,10 +14,58 @@ import ig from '../../assets/icons/ig.png'
 import tw from '../../assets/icons/twiter.png'
 import yt from '../../assets/icons/yt.png'
 import kanan from '../../assets/icons/kanan.png'
+// import axios from 'axios'
 
-const LandingPage = () => {
+const LandingPage = ({ navigation }) => {
+
+   // const [data, setData] = useEffect([]);
+
+   // const getDataFromApiAsync = async () =>{
+   //    try {
+   //       let response = await fetch('https://reqres.in/api/users?page=1');
+   //       let json = await response.json();
+   //       setData(json.data)
+   //    } catch (error) {
+   //       console.log(error);
+   //    }
+   // }
+
+   // useEffect(()=>{
+   //    getDataFromApiAsync()
+   // }, [])
+
+   // const renderItem = ({item}) => {
+   //    console.log(item.first_name)
+   //    return(
+   //       <View>
+   //          <Text> 
+   //             {item.first_name}
+   //          </Text>
+   //       </View>
+   //    )
+   // }
+
+   // uji gagal 2
+   //  const [data, setData] = useEffect([]);
+
+   //  useEffect(()=>{
+   //    axios.get(`https://reqres.in/api/users?page=2`).then((res)=>{
+   //       setData(res.data)
+   //    }).catch(()=> {
+   //       console.log('error')
+   //  })
+   //  },[])
+
+
    return (
       <ScrollView>
+
+         {/* <FlatList 
+      data = {data}
+      renderItem={renderItem}
+      keyExtractor = {(item) => item.id}
+
+      /> */}
 
          <View style={{
             flexDirection: 'row',
@@ -26,6 +74,8 @@ const LandingPage = () => {
             marginVertical: 20,
             alignItems: "center"
          }}>
+
+
             <Image source={tikit}
                style={{
                   height: 30,
@@ -39,6 +89,52 @@ const LandingPage = () => {
          <View style={{
             marginBottom: 167,
          }}>
+
+            <View
+               style={{
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+               }}>
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('ProfileDetail')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Profile
+                  </Text>
+               </TouchableOpacity>
+
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('Login')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Login
+                  </Text>
+               </TouchableOpacity>
+
+               
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('Register')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Resgister
+                  </Text>
+               </TouchableOpacity>
+
+               
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('Forgot')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Forgot
+                  </Text>
+               </TouchableOpacity>
+
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('Payment')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Payment
+                  </Text>
+               </TouchableOpacity>
+
+            </View>
+
+
             <View style={{
                marginLeft: 24,
                marginBottom: 64,
@@ -181,20 +277,24 @@ const LandingPage = () => {
          </View>
 
          <View style={{ flexDirection: 'row', margin: 24 }}>
-            <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16 }}>
-               <Image source={widow} width='120' height='185' />
-               <Text style={{ color: 'black', marginBottom: 4, fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 12 }}>
-                  Black Widow
-               </Text>
-               <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
-                  Action, Adventure, Sci-Fi
-               </Text>
-               <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
-                  <Text style={{ color: '#5F2EEA' }}>
-                     Detail
+
+            <TouchableOpacity
+               onPress={() => navigation.navigate('MovieDetail')}>
+               <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16 }}>
+                  <Image source={widow} width='120' height='185' />
+                  <Text style={{ color: 'black', marginBottom: 4, fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 12 }}>
+                     Black Widow
                   </Text>
+                  <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
+                     Action, Adventure, Sci-Fi
+                  </Text>
+                  <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
+                     <Text style={{ color: '#5F2EEA' }}>
+                        Detail
+                     </Text>
+                  </View>
                </View>
-            </View>
+            </TouchableOpacity>
 
             <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16 }}>
                <Image source={witches} width='120' height='185' />
@@ -258,12 +358,12 @@ const LandingPage = () => {
 
 
          <View style={{ marginLeft: 24, width: 252 }}>
-            <Image source={tikit} 
-               style={{ 
-                  height: 40, 
+            <Image source={tikit}
+               style={{
+                  height: 40,
                   width: 120,
-                  resizeMode: 'cover'                  
-                  }} />
+                  resizeMode: 'cover'
+               }} />
             <Text style={{ letterSpacing: 0.75, color: '#6E7191', lineHeight: 24, fontSize: 14, textAlign: 'left', marginTop: 12 }}>
                Stop waiting in line. Buy tickets
                conveniently, watch movies quietly.

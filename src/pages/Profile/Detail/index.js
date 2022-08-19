@@ -1,11 +1,11 @@
-import { ScrollView, Text, View, Image, Pressable, TextInput, StyleSheet } from "react-native"
+import { ScrollView, Text, View, Image, Pressable, TextInput, StyleSheet, TouchableOpacity } from "react-native"
 import React from "react"
 import Navbar from "../../../components/Navbar"
 import Footer from "../../../components/Footer"
 import profile from '../../../assets/image/nahrowiii.jpg'
 
 
-const ProfileDetail = () => {
+const ProfileDetail = ({navigation}) => {
      return (
 
           <ScrollView>
@@ -16,19 +16,27 @@ const ProfileDetail = () => {
                          justifyContent: 'space-between',
                          padding: 48
                     }}>
-                    <Text
-                         style={{
-                              fontSize: 16,
-                              color: 'black'
-                         }}>
-                         Detail Account
-                    </Text>
-                    <Text
-                         style={{
-                              fontSize: 16
-                         }}>
-                         Order History
-                    </Text>
+
+                    <TouchableOpacity
+                         onPress={() => navigation.navigate('ProfileDetail')}>
+                         <Text
+                              style={{
+                                   fontSize: 16,
+                                   color: 'black'
+                              }}>
+                              Detail Account
+                         </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                         onPress={() => navigation.navigate('OrderHistory')}>
+                         <Text
+                              style={{
+                                   fontSize: 16
+                              }}>
+                              Order History
+                         </Text>
+                    </TouchableOpacity>
                </View>
 
                <View
@@ -47,7 +55,8 @@ const ProfileDetail = () => {
                          <Text
                               style={{
                                    padding: 30,
-                                   fontSize: 16
+                                   fontSize: 16,
+                                   fontWeight: '800'
 
                               }}>
                               INFO
@@ -171,9 +180,9 @@ const ProfileDetail = () => {
                          </View>
                     </View>
 
-                    <Pressable 
+                    <Pressable
                          style={[styles.colorPurple]}>
-                         <Text 
+                         <Text
                               style={styles.textPurple}>
                               Update Change
                          </Text>
@@ -219,13 +228,13 @@ const ProfileDetail = () => {
                                    style={[styles.InputProfile]}
                               />
 
-                              
+
                          </View>
                     </View>
 
-                    <Pressable 
+                    <Pressable
                          style={[styles.colorPurple]}>
-                         <Text 
+                         <Text
                               style={styles.textPurple}>
                               Update Change
                          </Text>
@@ -241,19 +250,19 @@ const styles = StyleSheet.create({
      MarginButtom: {
           marginBottom: 30
      },
-     colorPurple:{
+     colorPurple: {
           backgroundColor: '#5F2EEA',
           borderRadius: 10,
           marginHorizontal: 55,
           marginVertical: 36,
      },
-     textPurple:{
+     textPurple: {
           textAlign: 'center',
           color: 'white',
           padding: 14,
           fontSize: 14,
           fontWeight: 'bold'
-          
+
      },
      TextProfile: {
           fontSize: 16,

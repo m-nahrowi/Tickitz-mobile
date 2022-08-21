@@ -14,7 +14,10 @@ const Item = ({ name, email, bidang, onPress, onDelete }) => {
                          height: 100,
                          width: 100,
                          borderRadius: 100
-                    }} source={{ uri: `https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80` }} />
+                    }} source={{ uri: 
+                    // `https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80` 
+                    `https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80`
+                    }} />
                </TouchableOpacity>
                <View style={styles.desc}>
                     <Text style={styles.descName}>

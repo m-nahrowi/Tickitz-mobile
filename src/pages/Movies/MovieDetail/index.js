@@ -1,5 +1,13 @@
-import { View, Text, ScrollView, Image, Pressable } from "react-native"
-import React from "react"
+import {
+   View,
+   Text,
+   ScrollView,
+   Image,
+   Pressable,
+   StyleSheet
+} from "react-native"
+import React, { useEffect, useState } from "react"
+import axios from 'axios'
 
 // import Layout from "../../../components/Layout"
 import Navbar from "../../../components/Navbar"
@@ -7,26 +15,34 @@ import Footer from "../../../components/Footer"
 import spider from '../../../assets/image/spider.png'
 import ebu from '../../../assets/icons/ebu.png'
 
+const styles = StyleSheet.create({
+   container: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      borderWidth: 2,
+      padding: 30,
+      marginHorizontal: 80,
+      marginTop: 40,
+      borderRadius: 10,
+      borderColor: '#DEDEDE'
+   }
+})
 
-const MovieDetail = () => {
+const MovieOutput = (
+   {
+      title,
+      cover,
+      release_date,
+      director,
+      description,
+      casts,
+      categories,
+   }
+) => {
    return (
-
-      // <View>
       <ScrollView>
-         {/* <View> */}
-         <Navbar />
          <View
-            style={{
-               flexDirection: 'row',
-               justifyContent: 'center',
-               borderWidth: 2,
-               padding: 30,
-               marginHorizontal: 80,
-               marginTop: 40,
-               borderRadius: 10,
-               borderColor: '#DEDEDE'
-
-            }}>
+            style={styles.container}>
             <Image
                style={{
                   alignSelf: 'center',
@@ -45,7 +61,7 @@ const MovieDetail = () => {
                fontWeight: '600'
 
             }}>
-            Spider-Man: Homecoming
+            {title}
          </Text>
 
          <Text
@@ -56,7 +72,7 @@ const MovieDetail = () => {
                fontWeight: '400',
                color: '#4E4B66'
             }}>
-            Adventure, Action, Sci-Fi
+            {categories}
          </Text>
 
          <View
@@ -83,7 +99,7 @@ const MovieDetail = () => {
                      fontWeight: '400',
                      color: '#121212'
                   }}>
-                  June 28, 2017
+                  {release_date}
                </Text>
                <Text
                   style={{
@@ -122,7 +138,7 @@ const MovieDetail = () => {
                      fontWeight: '400',
                      color: '#121212'
                   }}>
-                  Jon Watss
+                  {director}
                </Text>
                <Text
                   style={{
@@ -139,9 +155,7 @@ const MovieDetail = () => {
                      fontWeight: '400',
                      color: '#121212'
                   }}>
-                  Tom Holland,
-                  Robert Downey Jr.,
-                  etc.
+                  {casts}
                </Text>
 
 
@@ -178,10 +192,51 @@ const MovieDetail = () => {
                   marginTop: 16,
                   textAlign: 'justify'
                }}>
-               Thrilled by his experience with the Avengers, Peter returns home, where he lives with his Aunt May, under the watchful eye of his new mentor Tony Stark, Peter tries to fall back into his normal daily routine - distracted by thoughts of proving himself to be more than just your friendly neighborhood Spider-Man - but when the Vulture emerges as a new villain, everything that Peter holds most important will be threatened.
+               {description}
             </Text>
 
          </View>
+      </ScrollView>
+   )
+}
+
+
+const MovieDetail = () => {
+
+   const [movies, setMovies] = useState([]);
+   useEffect(() => {
+      getData();
+   })
+
+   const getData = () => {
+      axios.get(`http://10.0.2.2:2022/movies/`)
+         .then(res => {
+            console.log(`res : `, res.data)
+            setMovies(res.data)
+         })
+   }
+   return (
+
+      // <View>
+      <ScrollView>
+         {/* <View> */}
+         <Navbar />
+
+         {
+            movies.map(movie => {
+               return <MovieOutput
+                  title={movie.title}
+                  cover={movie.cover}
+                  release_date={movie.release_date}
+                  director={movie.director}
+                  description={movie.description}
+                  casts={movie.casts}
+                  categories={movie.categories}
+
+               />
+            })
+         }
+
 
          <View
             style={{
@@ -315,7 +370,7 @@ const MovieDetail = () => {
                      $10.00/seat
                   </Text>
                </View>
-               <Pressable 
+               <Pressable
                   style={{
                      marginHorizontal: 28,
                      marginBottom: 32,
@@ -323,11 +378,11 @@ const MovieDetail = () => {
                      marginTop: 25,
                      backgroundColor: '#5F2EEA'
                   }}>
-                  <Text style={{textAlign:'center', color: 'white', paddingVertical: 10, fontSize:14, fontWeight: '700'}}> Book now </Text>
+                  <Text style={{ textAlign: 'center', color: 'white', paddingVertical: 10, fontSize: 14, fontWeight: '700' }}> Book now </Text>
                </Pressable>
             </View>
 
-            <Text 
+            <Text
                style={{
                   marginTop: 48,
                   textAlign: 'center',

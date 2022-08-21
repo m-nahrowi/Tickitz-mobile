@@ -1,9 +1,58 @@
-import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, View, Image, Pressable } from 'react-native'
-import React from 'react'
+import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, View, Image, Pressable, Alert } from 'react-native'
+import React, { useState, useEffect } from 'react'
 import tickitz from '../../../assets/icons/Tickitz.png'
 import cover from '../../../assets/image/bg_cover.jpg'
+import axios from 'axios'
 
-const Register = () => {
+
+const styles = StyleSheet.create({
+  inputText: {
+    fontSize: 16,
+    paddingHorizontal: 20,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 10,
+  }
+})
+
+const Register = ({ navigation }) => {
+
+
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [phone_number, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submit = () => {
+    const data = {
+      first_name,
+      last_name,
+      phone_number,
+      email,
+      password,
+
+    }
+
+    // post register
+    axios.post(`http://10.0.2.2:2022/profile-user`, data)
+      .then(res => {
+        console.log(`res : `, res);
+        console.log(`res : `, res.data);
+        setFirstName("");
+        setLastName("");
+        setPhoneNumber("");
+        setEmail("");
+        setPassword("");
+        alert(`Register succses`)
+        // getData();
+      }).catch(error => console.log(error))
+
+
+  }
+
+  console.log("sayang jalan dong")
+
   return (
     <View>
       <ScrollView
@@ -50,13 +99,10 @@ const Register = () => {
         </Text>
         <TextInput
           placeholder='Write your first name'
-          style={{
-            fontSize: 16,
-            paddingHorizontal: 20,
-            borderWidth: 1,
-            borderColor: 'gray',
-            borderRadius: 10,
-          }} />
+          style={styles.inputText}
+          value={first_name}
+          onChangeText={(value) => setFirstName(value)}
+        />
         <Text
           style={{
             fontSize: 16,
@@ -68,13 +114,9 @@ const Register = () => {
         </Text>
         <TextInput
           placeholder='Write your first name'
-          style={{
-            fontSize: 16,
-            paddingHorizontal: 20,
-            borderWidth: 1,
-            borderColor: 'gray',
-            borderRadius: 10,
-          }} />
+          style={styles.inputText}
+          value={last_name}
+          onChangeText={(value) => setLastName(value)} />
         <Text
           style={{
             fontSize: 16,
@@ -86,14 +128,9 @@ const Register = () => {
         </Text>
         <TextInput
           placeholder='Write your first name'
-          style={{
-            fontSize: 16,
-            paddingHorizontal: 20,
-            borderWidth: 1,
-            borderColor: 'gray',
-            borderRadius: 10,
-
-          }} />
+          style={styles.inputText}
+          value={phone_number}
+          onChangeText={(value) => setPhoneNumber(value)} />
         <Text
           style={{
             fontSize: 16,
@@ -105,14 +142,9 @@ const Register = () => {
         </Text>
         <TextInput
           placeholder='Write your first name'
-          style={{
-            fontSize: 16,
-            paddingHorizontal: 20,
-            borderWidth: 1,
-            borderColor: 'gray',
-            borderRadius: 10,
-
-          }} />
+          style={styles.inputText}
+          value={email}
+          onChangeText={(value) => setEmail(value)} />
         <Text
           style={{
             fontSize: 16,
@@ -131,13 +163,18 @@ const Register = () => {
             borderColor: 'gray',
             borderRadius: 10,
             marginBottom: 40
-          }} />
+          }}
+          value={password}
+          onChangeText={(value) => setPassword(value)}
+        />
 
         <Pressable
           style={{
             backgroundColor: '#5F2EEA',
             borderRadius: 8
-          }}>
+          }}
+          onPress={submit}
+          >
           <Text
             style={{
               color: 'white',
@@ -163,6 +200,6 @@ const Register = () => {
   )
 }
 
-const styles = StyleSheet.create({})
+
 
 export default Register

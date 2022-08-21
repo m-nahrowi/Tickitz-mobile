@@ -1,0 +1,160 @@
+{
+  "profile-user": [
+    {
+      "id": 1,
+      "first_name": "Muhamad",
+      "last_name": "Nahrowi",
+      "phone_number": "0219001928988",
+      "email": "han@gamil.com",
+      "password": "nahrowiTampan123"
+    },
+    {
+      "first_name": "Muhamad",
+      "last_name": "Qurniawan",
+      "phone_number": "0219001928988",
+      "email": "zainudin@gamil.com",
+      "password": "nahrowiTampan123",
+      "id": 2
+    },
+    {
+      "first_name": "Bagus",
+      "last_name": "Pratama",
+      "phone_number": "0222182333",
+      "email": "han@gmail.com",
+      "password": "saaysukaikan",
+      "id": 3
+    },
+    {
+      "first_name": "Muhamad",
+      "last_name": "Qurniawan",
+      "phone_number": "0219001928988",
+      "email": "zainudin@gamil.com",
+      "password": "nahrowiTampan123",
+      "id": 4
+    },
+    {
+      "first_name": "Tri",
+      "last_name": "wulansari",
+      "phone_number": "023393484938",
+      "email": "tri@gmail.com",
+      "password": "sayaPecintabakso",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "nahrowi 2",
+      "email": "nahrowi@gmail.com",
+      "bidang": "RN DEV and Mobile",
+      "id": 2
+    },
+    {
+      "name": "nahrowi",
+      "email": "han@gmail.com",
+      "bidang": "IT",
+      "id": 5
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "name": "nahrowi",
+      "email": "han@gmail.com",
+      "phoneNumber": "0124578999"
+    },
+    {
+      "name": "udin tampan",
+      "email": "han@gmail.com",
+      "phoneNumber": "0124578999",
+      "id": 2
+    },
+    {
+      "name": "udin tampan",
+      "email": "han@gmail.com",
+      "phoneNumber": "0124578999",
+      "id": 3
+    }
+  ],
+  "movies": [
+    {
+      "title": "Badman far home",
+      "cover": "https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "nahrowi",
+      "id": 3
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 4
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 5
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 7
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 8
+    },
+    {
+      "title": "Spiderman naik angkot",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 9
+    },
+    {
+      "title": "Spiderman naik angkot",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 10
+    },
+    {
+      "title": "aku jelek dan aku bangga 5",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 11
+    }
+  ]
+}

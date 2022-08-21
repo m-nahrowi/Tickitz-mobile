@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FlatList, ScrollView, View, Image, Text, TextInput, TouchableOpacity } from "react-native"
+import {StyleSheet, FlatList, ScrollView, View, Image, Text, TextInput, TouchableOpacity } from "react-native"
 import logo from '../../assets/image/bg.png'
 import spider from '../../assets/image/spider.png'
 import lion from '../../assets/image/lion.png'
@@ -14,47 +14,68 @@ import ig from '../../assets/icons/ig.png'
 import tw from '../../assets/icons/twiter.png'
 import yt from '../../assets/icons/yt.png'
 import kanan from '../../assets/icons/kanan.png'
-// import axios from 'axios'
+import axios from 'axios'
+
+const styles = StyleSheet.create({
+   titleText : 
+   { 
+    color: 'black',
+    marginBottom: 4, 
+    fontSize: 14, 
+    fontWeight: '600', 
+    textAlign: 'center', 
+    marginTop: 12,
+    width: 130
+   }
+
+})
+
+const MovieList = (
+   {
+      cover,
+      title,
+      categories,
+      navigation
+   }
+) => {
+   return (
+      <ScrollView horizontal={false} style={{ flexDirection: 'row', margin: 24}}>
+         <TouchableOpacity
+            onPress={() => navigation.navigate('MovieDetail')}>
+            <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16, alignSelf: 'center' }}>
+               <Image source={widow} width='120' height='185' />
+               <Text style={styles.titleText}>
+                  {title}
+               </Text>
+               <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
+                  {categories}
+               </Text>
+               <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
+                  <Text style={{ color: '#5F2EEA' }}>
+                     Detail
+                  </Text>
+               </View>
+            </View>
+         </TouchableOpacity>
+      </ScrollView>
+
+   )
+}
 
 const LandingPage = ({ navigation }) => {
+   const [movies, setMovies] = useState([]);
+   useEffect(() => {
+      getData();
+   })
 
-   // const [data, setData] = useEffect([]);
+   const getData = () => {
+      axios.get(`http://10.0.2.2:2022/movies/`)
+         .then(res => {
+            console.log(`res : `, res.data)
+            setMovies(res.data)
+         })
+   }
 
-   // const getDataFromApiAsync = async () =>{
-   //    try {
-   //       let response = await fetch('https://reqres.in/api/users?page=1');
-   //       let json = await response.json();
-   //       setData(json.data)
-   //    } catch (error) {
-   //       console.log(error);
-   //    }
-   // }
-
-   // useEffect(()=>{
-   //    getDataFromApiAsync()
-   // }, [])
-
-   // const renderItem = ({item}) => {
-   //    console.log(item.first_name)
-   //    return(
-   //       <View>
-   //          <Text> 
-   //             {item.first_name}
-   //          </Text>
-   //       </View>
-   //    )
-   // }
-
-   // uji gagal 2
-   //  const [data, setData] = useEffect([]);
-
-   //  useEffect(()=>{
-   //    axios.get(`https://reqres.in/api/users?page=2`).then((res)=>{
-   //       setData(res.data)
-   //    }).catch(()=> {
-   //       console.log('error')
-   //  })
-   //  },[])
 
 
    return (
@@ -168,6 +189,13 @@ const LandingPage = ({ navigation }) => {
                   onPress={() => navigation.navigate('MoviesManage')}>
                   <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
                      MoviesManage | Admin
+                  </Text>
+               </TouchableOpacity>
+
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('QrCode')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Generate QrCode
                   </Text>
                </TouchableOpacity>
             </View>
@@ -314,58 +342,17 @@ const LandingPage = ({ navigation }) => {
 
          </View>
 
-         <View style={{ flexDirection: 'row', margin: 24 }}>
 
-            <TouchableOpacity
-               onPress={() => navigation.navigate('MovieDetail')}>
-               <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16 }}>
-                  <Image source={widow} width='120' height='185' />
-                  <Text style={{ color: 'black', marginBottom: 4, fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 12 }}>
-                     Black Widow
-                  </Text>
-                  <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
-                     Action, Adventure, Sci-Fi
-                  </Text>
-                  <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
-                     <Text style={{ color: '#5F2EEA' }}>
-                        Detail
-                     </Text>
-                  </View>
-               </View>
-            </TouchableOpacity>
+         {movies.map(movie => {
+            return <MovieList 
+               title={movie.title}
+               cover={movie.cover}
+               categories={movie.categories}
+               navigation={navigation}
+            />
+         })}
 
-            <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16 }}>
-               <Image source={witches} width='120' height='185' />
-               <Text style={{ color: 'black', marginBottom: 4, fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 12 }}>
-                  The Witches
-               </Text>
-               <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
-                  Adventure, Comedy,
-                  Family
-               </Text>
-               <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
-                  <Text style={{ color: '#5F2EEA' }}>
-                     Detail
-                  </Text>
-               </View>
-            </View>
 
-            {/* <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16}}>
-               <Image source={witches} width='120' height='185' />
-               <Text style={{ color: 'black', marginBottom: 4, fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 12 }}>
-                  The Witches
-               </Text>
-               <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
-                  Adventure, Comedy,
-                  Family
-               </Text>
-               <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
-                  <Text style={{ color: '#5F2EEA' }}>
-                     Detail
-                  </Text>
-               </View>
-            </View> */}
-         </View>
 
          <View style={{ marginTop: 72, }}>
             <Text style={{ color: '#4E4B66', fontSize: 14, textAlign: 'center', marginTop: 48 }}>

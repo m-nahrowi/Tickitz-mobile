@@ -16,37 +16,58 @@ const OutputMovies = ({
 
 }) => {
      return (
-          <View>
-
-               <Text>
-                    OUTPUT Movies
-               </Text>
+          <View style={{
+               padding: 32
+          }}>
                <TouchableOpacity onPress={onPress}>
-                    <Text>
-                         {title}
+                    <Text style={styles.output}>
+                         {`Tittle Movie : ${title}`}
                     </Text>
-                    <Text>
+                    {/* <Text>
                          {cover}
+                    </Text> */}
+                    <View
+                         style={{
+                              flexDirection: 'row',
+                              justifyContent: 'center',
+                              borderWidth: 2,
+                              padding: 30,
+                              marginHorizontal: 80,
+                              marginTop: 40,
+                              borderRadius: 10,
+                              borderColor: '#DEDEDE'
+
+                         }}>
+                         <Image
+                              style={{
+                                   alignSelf: 'center',
+                                   resizeMode: 'cover',
+                                   width: 160,
+                                   height: 245
+                              }} source={{
+                                   uri: `${cover}`
+                                   // uri: `https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80`
+                              }} />
+                    </View>
+                    <Text style={styles.output}>
+                         {`Release Date : ${release_date}`}
                     </Text>
-                    <Text>
-                         {release_date}
+                    <Text style={styles.output}>
+                         {`Director : ${director}`}
                     </Text>
-                    <Text>
-                         {director}
+                    <Text style={styles.output}>
+                         {`Synopsis : ${description}`}
                     </Text>
-                    <Text>
-                         {description}
+                    <Text style={styles.output}>
+                         {`Cast : ${casts}`}
                     </Text>
-                    <Text>
-                         {casts}
-                    </Text>
-                    <Text>
-                         {categories}
+                    <Text style={styles.output}>
+                         {`Categories : ${categories}`}
                     </Text>
                </TouchableOpacity>
 
                <TouchableOpacity onPress={onDelete}>
-                    <Text style={{ backgroundColor: 'red', color: 'white', fontSize: 18 }}>
+                    <Text style={{ backgroundColor: 'red', color: 'white', fontSize: 18, textAlign: 'center', paddingVertical: 10, marginTop: 10 }}>
                          Hapus data
                     </Text>
                </TouchableOpacity>
@@ -182,6 +203,15 @@ const MoviesManage = ({ navigation }) => {
                     />
 
                     <Text style={styles.textTitle}>
+                         Cover
+                    </Text>
+                    <TextInput
+                         style={styles.textInput} placeholder={'type cover'}
+                         value={cover}
+                         onChangeText={(value) => setCover(value)}
+                    />
+
+                    <Text style={styles.textTitle}>
                          Category
                     </Text>
                     <TextInput
@@ -233,9 +263,19 @@ const MoviesManage = ({ navigation }) => {
 
                </View>
 
+
+
                <View style={{
                     marginVertical: 50
                }}>
+                    <Text
+                         style={{
+                              textAlign: 'center',
+                              fontSize: 24,
+                              color: `black`
+                         }}>
+                         OUTPUT Movies
+                    </Text>
 
                </View>
                {movies.map(movie => {
@@ -273,6 +313,11 @@ const MoviesManage = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+     output: {
+          fontSize: 18,
+          color: 'black',
+          marginVertical: 10
+     },
      container: {
           padding: 40
      },

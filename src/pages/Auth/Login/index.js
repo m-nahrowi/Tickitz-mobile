@@ -1,9 +1,19 @@
-import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, View, Image, Pressable } from 'react-native'
+import { 
+    ImageBackground, 
+    ScrollView, 
+    StyleSheet, 
+    Text, 
+    TextInput, 
+    View, 
+    Image, 
+    Pressable,
+    TouchableOpacity
+} from 'react-native'
 import React from 'react'
 import tickitz from '../../../assets/icons/Tickitz.png'
 import cover from '../../../assets/image/bg_cover.jpg'
 
-const Login = () => {
+const Login = ({ navigation }) => {
     return (
         <View>
             <ScrollView
@@ -102,9 +112,15 @@ const Login = () => {
                         marginTop: 24,
                         fontWeight: '500',
                         color: '#8692A6'
-                        
+
                     }}>
-                    Forgot your password? <Text style={{ color: '#5F2EEA', textDecorationLine: 'underline' }}>Reset now</Text>
+                    Forgot your password?
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Forgot')}>
+                        <Text style={{textAlign: 'center',fontWeight: 'bold',fontSize: 16, marginTop: 24,color: '#5F2EEA', textDecorationLine: 'underline' }}>
+                            Reset now
+                        </Text>
+                    </TouchableOpacity>
                 </Text>
 
                 <Text
@@ -113,9 +129,15 @@ const Login = () => {
                         fontSize: 16,
                         marginTop: 10,
                         fontWeight: '500',
-                        color: '#8692A6'
+                        color: '#8692A6',
                     }}>
-                    Don’t have an account? <Text style={{ color: '#5F2EEA', textDecorationLine: 'underline' }}>Sign Up </Text>
+                    Don’t have an account?
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Register')}>
+                        <Text style={{textAlign:'center',fontSize: 16,fontWeight: 'bold' ,color: '#5F2EEA', textDecorationLine: 'underline' }}>
+                            Sign Up
+                        </Text>
+                    </TouchableOpacity>
                 </Text>
 
             </ScrollView>

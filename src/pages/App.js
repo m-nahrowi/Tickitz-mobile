@@ -20,6 +20,7 @@ import TestCRUD from "./TestCRUD";
 import AxiosApi from "./AxiosAPI";
 import LocalAPI from "./LocalAPI";
 import MoviesManage from "./Admin/MoviesManage";
+import QrCode from "./QRcode";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,7 @@ const App = () => {
         <Stack.Screen name="TestCRUD" component={TestCRUD} />
         <Stack.Screen name="AxiosApi" component={AxiosApi} />
         <Stack.Screen name="LocalAPI" component={LocalAPI} />
+        <Stack.Screen name="QrCode" component={QrCode} />
         <Stack.Screen name="MoviesManage" component={MoviesManage} />
         <Stack.Screen name="Navbar" component={Navbar} />
       </Stack.Navigator>

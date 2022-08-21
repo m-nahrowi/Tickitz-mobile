@@ -151,7 +151,7 @@ export default function LocalAPI({ navigation }) {
                     )}
                     />
                })}
-               <Item />
+               {/* <Item /> */}
 
           </ScrollView>
      )

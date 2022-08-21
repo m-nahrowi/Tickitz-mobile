@@ -167,7 +167,7 @@ const LandingPage = ({ navigation }) => {
                <TouchableOpacity
                   onPress={() => navigation.navigate('MoviesManage')}>
                   <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     MoviesManage
+                     MoviesManage | Admin
                   </Text>
                </TouchableOpacity>
             </View>

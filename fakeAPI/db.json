@@ -35,27 +35,7 @@
   ],
   "movies": [
     {
-      "id": 1,
-      "title": "aku jelek dan aku bangga 5",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "humor"
-    },
-    {
-      "title": "aku jelek dan aku bangga 5",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "humor",
-      "id": 2
-    },
-    {
-      "title": "aku jelek dan aku bangga 5",
+      "title": "Badman far home",
       "cover": "1657553925938-338978638-bayar.png",
       "release_date": "2022-06-08",
       "director": "han",
@@ -103,6 +83,266 @@
       "casts": "paul, roy",
       "categories": "humor, fiction, adventure",
       "id": 7
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 8
+    },
+    {
+      "title": "Spiderman naik angkot",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 9
+    },
+    {
+      "title": "Spiderman naik angkot",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 10
+    },
+    {
+      "title": "aku jelek dan aku bangga 5",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 11
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 12
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 13
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 14
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 15
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 16
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 17
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 18
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 19
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 20
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 21
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 22
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 23
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 24
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 25
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 26
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 27
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 28
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 29
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 30
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 31
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 32
+    },
+    {
+      "title": "",
+      "cover": "",
+      "release_date": "",
+      "director": "",
+      "description": "",
+      "casts": "",
+      "categories": "",
+      "id": 33
     }
   ]
 }

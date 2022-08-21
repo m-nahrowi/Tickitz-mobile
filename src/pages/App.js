@@ -15,6 +15,11 @@ import OrderHistory from "./Profile/OrderHistory"
 
 import Navbar from "../components/Navbar";
 import Payment from "./Payment";
+import MovieList from "./Movies/MovieList";
+import TestCRUD from "./TestCRUD";
+import AxiosApi from "./AxiosAPI";
+import LocalAPI from "./LocalAPI";
+import MoviesManage from "./Admin/MoviesManage";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +36,11 @@ const App = () => {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Forgot" component={Forgot} />
         <Stack.Screen name="Payment" component={Payment} />
+        <Stack.Screen name="MovieList" component={MovieList} />
+        <Stack.Screen name="TestCRUD" component={TestCRUD} />
+        <Stack.Screen name="AxiosApi" component={AxiosApi} />
+        <Stack.Screen name="LocalAPI" component={LocalAPI} />
+        <Stack.Screen name="MoviesManage" component={MoviesManage} />
         <Stack.Screen name="Navbar" component={Navbar} />
       </Stack.Navigator>
     </NavigationContainer>

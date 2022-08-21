@@ -109,7 +109,7 @@ const LandingPage = ({ navigation }) => {
                   </Text>
                </TouchableOpacity>
 
-               
+
                <TouchableOpacity
                   onPress={() => navigation.navigate('Register')}>
                   <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
@@ -117,7 +117,7 @@ const LandingPage = ({ navigation }) => {
                   </Text>
                </TouchableOpacity>
 
-               
+
                <TouchableOpacity
                   onPress={() => navigation.navigate('Forgot')}>
                   <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
@@ -132,6 +132,44 @@ const LandingPage = ({ navigation }) => {
                   </Text>
                </TouchableOpacity>
 
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('MovieList')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Movie List
+                  </Text>
+               </TouchableOpacity>
+
+               {/* uji CRUD */}
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('TestCRUD')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     CRUD TEST
+                  </Text>
+               </TouchableOpacity>
+
+               {/* axios */}
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('AxiosApi')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Axios Test
+                  </Text>
+               </TouchableOpacity>
+
+               {/* Local API */}
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('LocalAPI')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     Local API
+                  </Text>
+               </TouchableOpacity>
+
+               {/* Movies manage */}
+               <TouchableOpacity
+                  onPress={() => navigation.navigate('MoviesManage')}>
+                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
+                     MoviesManage
+                  </Text>
+               </TouchableOpacity>
             </View>
 
 

@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "name": "nahrowi 2",
+      "email": "nahrowi@gmail.com",
+      "bidang": "RN DEV and Mobile",
+      "id": 2
+    },
+    {
+      "name": "nahrowi",
+      "email": "han@gmail.com",
+      "bidang": "IT",
+      "id": 5
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "name": "nahrowi",
+      "email": "han@gmail.com",
+      "phoneNumber": "0124578999"
+    },
+    {
+      "name": "udin tampan",
+      "email": "han@gmail.com",
+      "phoneNumber": "0124578999",
+      "id": 2
+    },
+    {
+      "name": "udin tampan",
+      "email": "han@gmail.com",
+      "phoneNumber": "0124578999",
+      "id": 3
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "aku jelek dan aku bangga 5",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor"
+    },
+    {
+      "title": "aku jelek dan aku bangga 5",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 2
+    },
+    {
+      "title": "aku jelek dan aku bangga 5",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "han",
+      "description": "dah lah",
+      "casts": "aaaa",
+      "categories": "humor",
+      "id": 3
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 4
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 5
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 6
+    },
+    {
+      "title": "Spiderman Homecoming",
+      "cover": "1657553925938-338978638-bayar.png",
+      "release_date": "2022-06-08",
+      "director": "Faisal, Mike",
+      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
+      "casts": "paul, roy",
+      "categories": "humor, fiction, adventure",
+      "id": 7
+    }
+  ]
+}

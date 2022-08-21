@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, ScrollView, Image, StyleSheet } from "react-native"
+import { View, Text, ScrollView, Image, StyleSheet, TextInput, Pressable } from "react-native"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
 import google_pay from '../../assets/icons/google.png'
@@ -73,7 +73,7 @@ const Payment = ({ navigation }) => {
                                    style={{
                                         height: 26,
                                         width: 65,
-                                        resizeMode: 'cover',
+                                        resizeMode: 'contain',
                                    }} source={google_pay} />
                          </View>
 
@@ -82,7 +82,7 @@ const Payment = ({ navigation }) => {
                                    style={{
                                         height: 26,
                                         width: 65,
-                                        resizeMode: 'cover'
+                                        resizeMode: 'contain'
                                    }} source={visa} />
                          </View>
 
@@ -92,7 +92,7 @@ const Payment = ({ navigation }) => {
                                    style={{
                                         height: 26,
                                         width: 65,
-                                        resizeMode: 'cover'
+                                        resizeMode: 'contain'
                                    }} source={gopay} />
                          </View>
                     </View>
@@ -108,7 +108,7 @@ const Payment = ({ navigation }) => {
                                    style={{
                                         height: 26,
                                         width: 65,
-                                        resizeMode: 'cover',
+                                        resizeMode: 'contain',
                                    }} source={paypal} />
                          </View>
 
@@ -116,9 +116,9 @@ const Payment = ({ navigation }) => {
                          <View style={styles.wrap}>
                               <Image
                                    style={{
-                                        height: 26,
-                                        width: 65,
-                                        resizeMode: 'cover'
+                                        height: 20,
+                                        width: 60,
+                                        resizeMode: 'contain'
                                    }} source={ovo} />
                          </View>
 
@@ -127,10 +127,110 @@ const Payment = ({ navigation }) => {
                                    style={{
                                         height: 26,
                                         width: 65,
-                                        resizeMode: 'cover'
+                                        resizeMode: 'contain'
                                    }} source={dana} />
                          </View>
                     </View>
+                    <Text
+                         style={{
+                              textAlign: "center",
+                              fontSize: 14,
+                              color: '#6E7191',
+                              marginTop: 30,
+                              marginBottom: 20
+                         }}>
+                         Pay via cash. <Text style={{ color: '#5F2EEA', fontWeight: 'bold' }}>See how it work</Text>
+                    </Text>
+               </View>
+
+               <View>
+                    <Text
+                         style={{
+                              color: 'black',
+                              fontSize: 18,
+                              marginTop: 40,
+                              paddingHorizontal: 24,
+                              fontWeight: 'bold',
+                              marginBottom: 30
+                         }}>
+                         Personal Info
+                    </Text>
+                    <View
+                         style={{
+                              marginHorizontal: 24,
+                              padding: 24.,
+                              backgroundColor: 'white',
+                              borderRadius: 20,
+                         }}>
+                         <Text style={{
+                              marginBottom: 10,
+                              fontSize: 16,
+                              color: 'black'
+                         }}>
+                              Full Name
+                         </Text>
+                         <TextInput
+                              style={{
+                                   borderWidth: 2,
+                                   borderRadius: 10,
+                                   paddingHorizontal: 15,
+                                   fontSize: 16
+
+                              }}
+                         />
+
+                         <Text style={{
+                              marginTop: 20,
+                              marginBottom: 10,
+                              fontSize: 16,
+                              color: 'black'
+                         }}>
+                              Email
+                         </Text>
+                         <TextInput
+                              style={{
+                                   borderWidth: 2,
+                                   borderRadius: 10,
+                                   paddingHorizontal: 15,
+                                   fontSize: 16
+                              }}
+                         />
+
+                         <Text style={{
+                              marginTop: 20,
+                              marginBottom: 10,
+                              fontSize: 16,
+                              color: 'black'
+                         }}>
+                              Phone Number
+                         </Text>
+                         <TextInput
+                              style={{
+                                   borderWidth: 2,
+                                   borderRadius: 10,
+                                   paddingHorizontal: 15,
+                                   fontSize: 16
+                              }}
+                         />
+                    </View>
+
+                    <Pressable 
+                         style={{
+                              backgroundColor: '#5F2EEA',
+                              margin: 24,
+                              marginHorizontal: 48,
+                              borderRadius: 10,
+                         }}>
+                         <Text 
+                              style={{
+                                   textAlign: 'center',
+                                   paddingVertical: 13,
+                                   color: 'white',
+                                   fontWeight: 'bold'
+                              }}>
+                              Pay your order
+                         </Text>
+                    </Pressable>
                </View>
                <Footer />
           </ScrollView>

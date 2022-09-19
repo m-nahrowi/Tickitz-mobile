@@ -35,36 +35,6 @@
   ],
   "movies": [
     {
-      "title": "Badman far home",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "humor",
-      "id": 3
-    },
-    {
-      "title": "Spiderman Homecoming",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "Faisal, Mike",
-      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
-      "casts": "paul, roy",
-      "categories": "humor, fiction, adventure",
-      "id": 4
-    },
-    {
-      "title": "Spiderman Homecoming",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "Faisal, Mike",
-      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
-      "casts": "paul, roy",
-      "categories": "humor, fiction, adventure",
-      "id": 5
-    },
-    {
       "title": "Spiderman Homecoming",
       "cover": "1657553925938-338978638-bayar.png",
       "release_date": "2022-06-08",

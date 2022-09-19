@@ -4,10 +4,15 @@ import {
    ScrollView,
    Image,
    Pressable,
-   StyleSheet
+   StyleSheet,
+   DrawerLayoutAndroid
 } from "react-native"
 import React, { useEffect, useState } from "react"
 import axios from 'axios'
+
+
+
+import strange from '../../../assets/image/strange.jpg'
 
 // import Layout from "../../../components/Layout"
 import Navbar from "../../../components/Navbar"
@@ -37,11 +42,37 @@ const MovieOutput = (
       description,
       casts,
       categories,
+      duration
    }
 ) => {
    return (
       <ScrollView>
-         <View
+         {/* <View>
+            <YoutubePlayer
+               height={300}
+               play={true}
+               // videoId={'84WIaK3bl_s'}
+            />
+         </View> */}
+
+         {/* <Video source={video}   // Can be a URL or a local file.
+            ref={(ref) => {
+               this.player = ref
+            }}                                      // Store reference
+            onBuffer={this.onBuffer}                // Callback when remote video is buffering
+            onError={this.videoError}               // Callback when video cannot be loaded
+            style={styles.backgroundVideo} 
+
+
+            /> */}
+         <Image
+            style={{
+               resizeMode: 'contain',
+               height: 300,
+               width: '100%'
+            }} source={strange} />
+
+         {/* <View
             style={styles.container}>
             <Image
                style={{
@@ -50,6 +81,67 @@ const MovieOutput = (
                   width: 160,
                   height: 245
                }} source={spider} />
+         </View> */}
+         <View
+            style={{
+               flexDirection: 'row',
+               alignItems: 'center'
+            }}>
+            <Image
+               style={{
+                  resizeMode: "contain",
+                  height: 100,
+                  width: 100,
+               }} source={strange} />
+            <View>
+               <Text
+                  style={{
+                     color: 'white',
+                     fontSize: 16,
+                     marginBottom: 10
+                  }}>
+                  {title}
+               </Text>
+               <View
+                  style={{
+                     flexDirection: 'row',
+
+                  }}>
+                  <Text
+                     style={{
+                        color: 'white',
+                        fontSize: 12
+                     }}>
+
+                     {categories}
+                  </Text>
+                  {/* <Text
+                     style={{
+                        color: 'white',
+                        fontSize: 12,
+                        marginHorizontal: 5
+                     }}>
+                     Fiction
+                  </Text>
+                  <Text
+                     style={{
+                        color: 'white',
+                        fontSize: 12
+                     }}>
+                     Adventure
+                  </Text> */}
+
+               </View>
+               <Text
+                  style={{
+                     color: '#ffd700',
+                     fontSize: 12,
+                     marginTop: 5
+                     // backgroundColor: '#ffd700'
+                  }}>
+                  {duration}
+               </Text>
+            </View>
          </View>
 
          <Text
@@ -57,12 +149,34 @@ const MovieOutput = (
                marginTop: 32,
                fontSize: 20,
                textAlign: 'center',
-               color: 'black',
+               color: 'white',
                fontWeight: '600'
 
             }}>
             {title}
          </Text>
+
+         <View 
+            style={{
+               marginTop: 20,
+               marginHorizontal: 20,
+               flexDirection: 'row',
+               justifyContent: 'center',
+               paddingHorizontal: 10,
+               // width: 300
+               // width: '100%'
+            }}>
+            <Text
+               style={{
+                  color: 'white',
+                  textAlign: 'center',
+                  // width: '100%',
+                  height: 100,
+               }}>
+               {description}
+            </Text>
+         </View>
+
 
          <Text
             style={{
@@ -70,7 +184,7 @@ const MovieOutput = (
                marginTop: 8,
                fontSize: 16,
                fontWeight: '400',
-               color: '#4E4B66'
+               color: 'white'
             }}>
             {categories}
          </Text>
@@ -97,7 +211,7 @@ const MovieOutput = (
                   style={{
                      fontSize: 16,
                      fontWeight: '400',
-                     color: '#121212'
+                     color: 'yellow'
                   }}>
                   {release_date}
                </Text>
@@ -114,7 +228,7 @@ const MovieOutput = (
                   style={{
                      fontSize: 16,
                      fontWeight: '400',
-                     color: '#121212'
+                     color: 'yellow'
                   }}>
                   2 hrs 13 min
                </Text>
@@ -136,7 +250,7 @@ const MovieOutput = (
                   style={{
                      fontSize: 16,
                      fontWeight: '400',
-                     color: '#121212'
+                     color: 'yellow'
                   }}>
                   {director}
                </Text>
@@ -153,7 +267,7 @@ const MovieOutput = (
                   style={{
                      fontSize: 16,
                      fontWeight: '400',
-                     color: '#121212'
+                     color: 'yellow'
                   }}>
                   {casts}
                </Text>
@@ -206,10 +320,14 @@ const MovieDetail = () => {
    const [movies, setMovies] = useState([]);
    useEffect(() => {
       getData();
-   })
+   }, [])
 
    const getData = () => {
-      axios.get(`http://10.0.2.2:2022/movies/`)
+      axios.get(
+         `http://10.0.2.2:2022/movies/`
+         // `http://192.168.125.84:2022/movies/`
+
+      )
          .then(res => {
             console.log(`res : `, res.data)
             setMovies(res.data)
@@ -218,9 +336,12 @@ const MovieDetail = () => {
    return (
 
       // <View>
-      <ScrollView>
+      <ScrollView
+         style={{
+            backgroundColor: '#010114'
+         }}>
          {/* <View> */}
-         <Navbar />
+         {/* <Navbar /> */}
 
          {
             movies.map(movie => {
@@ -231,6 +352,7 @@ const MovieDetail = () => {
                   director={movie.director}
                   description={movie.description}
                   casts={movie.casts}
+                  duration={movie.duration}
                   categories={movie.categories}
 
                />
@@ -238,7 +360,7 @@ const MovieDetail = () => {
          }
 
 
-         <View
+         {/* <View
             style={{
                backgroundColor: '#F5F6F8',
                marginTop: 20
@@ -256,7 +378,7 @@ const MovieDetail = () => {
             <View
                style={{
                   flex: 1,
-                  // marginHorizontal: 30,
+                  
                   backgroundColor: 'green',
                   width: `100%`,
                   height: 50,
@@ -265,14 +387,14 @@ const MovieDetail = () => {
             <View
                style={{
                   flex: 1,
-                  // marginHorizontal: 30,
+                
                   backgroundColor: 'green',
                   width: `100%`,
                   height: 50,
                }}>
-            </View>
+            </View> */}
 
-
+         {/* 
             <View
                style={{
                   marginHorizontal: 24,
@@ -380,9 +502,9 @@ const MovieDetail = () => {
                   }}>
                   <Text style={{ textAlign: 'center', color: 'white', paddingVertical: 10, fontSize: 14, fontWeight: '700' }}> Book now </Text>
                </Pressable>
-            </View>
+            </View> */}
 
-            <Text
+         {/* <Text
                style={{
                   marginTop: 48,
                   textAlign: 'center',
@@ -392,11 +514,11 @@ const MovieDetail = () => {
                   marginBottom: 40
                }}>
                view more
-            </Text>
-         </View>
+            </Text> */}
+         {/* </View> */}
 
 
-         <Footer />
+         {/* <Footer /> */}
          {/* </View> */}
       </ScrollView>
       // </View>

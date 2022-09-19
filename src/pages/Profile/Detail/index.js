@@ -1,11 +1,156 @@
 import { ScrollView, Text, View, Image, Pressable, TextInput, StyleSheet, TouchableOpacity } from "react-native"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Navbar from "../../../components/Navbar"
 import Footer from "../../../components/Footer"
-import profile from '../../../assets/image/nahrowiii.jpg'
+import profile from '../../../assets/image/nahrowiii.jpg';
+import axios from 'axios';
+
+const OutProfile = ({
+     first_name,
+     last_name,
+     email,
+     onPress
+}) => {
+     return (
+          <ScrollView>
+               <View
+                    style={{
+                         backgroundColor: 'white',
+                         marginHorizontal: 24,
+                         marginVertical: 32,
+                         borderRadius: 15
+                    }}>
+                    <TouchableOpacity onPress={onPress}>
+                         <Text
+                              style={{
+                                   padding: 30,
+                                   fontSize: 16,
+                                   fontWeight: '800'
+
+                              }}>
+                              INFO
+                         </Text>
+
+                         <Image
+                              style={{
+                                   alignSelf: 'center',
+                                   borderRadius: 60,
+                                   height: 120,
+                                   width: 120,
+                              }} source={profile} />
+
+                         <Text
+                              style={{
+                                   fontSize: 20,
+                                   color: 'black',
+                                   textAlign: "center",
+                                   marginTop: 32
+                              }}>
+                              {`${first_name} ${last_name}`}
+                         </Text>
+                         <Text
+                              style={{
+                                   fontSize: 14,
+                                   color: '#4E4B66',
+                                   textAlign: 'center',
+                                   marginTop: 4,
+                                   marginBottom: 40
+                              }}>
+                              {email}
+                         </Text>
+                         <View
+                              style={{
+                                   borderBottomWidth: 1,
+                                   borderColor: '#DEDEDE',
+                                   marginBottom: 32
+
+                              }}>
+
+                         </View>
+                    </TouchableOpacity>
+                    <Pressable
+                         style={{
+                              borderRadius: 14,
+                              marginHorizontal: 70,
+                              marginBottom: 27,
+                              backgroundColor: '#5F2EEA'
+                         }}>
+                         <Text
+                              style={{
+                                   padding: 15,
+                                   color: 'white',
+                                   textAlign: 'center',
+                                   fontSize: 16,
+                                   fontWeight: '700'
+                              }}>
+                              Logout
+                         </Text>
+                    </Pressable>
+               </View>
+          </ScrollView>
+     )
+}
 
 
-const ProfileDetail = ({navigation}) => {
+const ProfileDetail = ({ navigation }) => {
+     const [first_name, setFirstName] = useState("");
+     const [last_name, setLastName] = useState("");
+     const [phone_number, setPhoneNumber] = useState("");
+     const [email, setEmail] = useState("");
+     const [password, setPassword] = useState("");
+     const [selectedProfile, setSelectedProfile] = useState({});
+     const [profiles, setProfile] = useState([])
+
+     useEffect(() => {
+          getData();
+          console.log(`ini profile`, profiles)
+     }, [])
+
+     const getData = () => {
+          axios.get(`http://10.0.2.2:2022/profile-user/1`)
+               .then(res => {
+                    console.log(`res : `, res.data)
+                    setProfile(res.data)
+               })
+     }
+
+     const selectItem = (item) => {
+          console.log(`selected item : `, item);
+          setSelectedProfile(item);
+          setFirstName(item.first_name);
+          setLastName(item.last_name);
+          setPhoneNumber(item.phone_number);
+          setEmail(item.email);
+          setPassword(item.password);
+
+     }
+
+     const submit = () => {
+          const data = {
+               first_name,
+               last_name,
+               phone_number,
+               email,
+               password,
+          }
+          console.log(`data before send update: `, data)
+
+          axios.put(`http://10.0.2.2:2022/profile-user/${selectedProfile.id}`, data)
+               .then(res => {
+                    console.log(`res update : `, res);
+                    setFirstName("");
+                    setLastName("");
+                    setPhoneNumber("");
+                    setEmail("");
+                    setPassword("");
+                    getData();
+               })
+
+
+     }
+
+     console.log(`bismillah jalann yang`)
+
      return (
 
           <ScrollView>
@@ -39,13 +184,27 @@ const ProfileDetail = ({navigation}) => {
                     </TouchableOpacity>
                </View>
 
+
+               {/* {profiles?.map(profile => { */}
+                    {/* return  */}
+                    <OutProfile
+                         // key={profile.id}
+                         first_name={profiles.first_name}
+                         last_name={profiles.last_name}
+                         email={profiles.email}
+                         onPress={() => selectItem(profiles)}
+                    />
+               {/* })}  */}
+               {/* <OutProfile profiles /> */}
+
+
                <View
                     style={{
                          backgroundColor: '#E5E5E5',
                          borderRadius: 8
                     }}
                >
-                    <View
+                    {/* <View
                          style={{
                               backgroundColor: 'white',
                               marginHorizontal: 24,
@@ -117,7 +276,8 @@ const ProfileDetail = ({navigation}) => {
                                    Logout
                               </Text>
                          </Pressable>
-                    </View>
+                    </View> */}
+
 
                     <Text
                          style={{
@@ -156,10 +316,25 @@ const ProfileDetail = ({navigation}) => {
                                         marginLeft: 24,
                                         fontSize: 16
                                    }}>
-                                   Full Name
+                                   First Name
                               </Text>
                               <TextInput
                                    style={[styles.InputProfile]}
+                                   value={first_name}
+                                   onChangeText={(value) => setFirstName(value)}
+                              />
+                              <Text
+                                   style={{
+                                        marginTop: 50,
+                                        marginLeft: 24,
+                                        fontSize: 16
+                                   }}>
+                                   Last Name
+                              </Text>
+                              <TextInput
+                                   style={[styles.InputProfile]}
+                                   value={last_name}
+                                   onChangeText={(value) => setLastName(value)}
                               />
 
                               <Text
@@ -168,6 +343,8 @@ const ProfileDetail = ({navigation}) => {
                               </Text>
                               <TextInput
                                    style={[styles.InputProfile]}
+                                   value={email}
+                                   onChangeText={(value) => setEmail(value)}
                               />
 
                               <Text
@@ -176,11 +353,27 @@ const ProfileDetail = ({navigation}) => {
                               </Text>
                               <TextInput
                                    style={[styles.InputProfile]}
+                                   value={phone_number}
+                                   onChangeText={(value) => setPhoneNumbers(value)}
+                              />
+
+                              <Text
+                                   style={{
+                                        marginTop: 50,
+                                        marginLeft: 24,
+                                        fontSize: 16
+                                   }}>
+                                   New Password
+                              </Text>
+                              <TextInput
+                                   style={[styles.InputProfile]}
+                                   value={password}
+                                   onChangeText={(value) => setPassword(value)}
                               />
                          </View>
                     </View>
 
-                    <Pressable
+                    <Pressable onPress={submit}
                          style={[styles.colorPurple]}>
                          <Text
                               style={styles.textPurple}>
@@ -188,7 +381,7 @@ const ProfileDetail = ({navigation}) => {
                          </Text>
                     </Pressable>
 
-                    <View>
+                    {/* <View>
                          <View
                               style={{
                                    marginHorizontal: 24,
@@ -238,10 +431,10 @@ const ProfileDetail = ({navigation}) => {
                               style={styles.textPurple}>
                               Update Change
                          </Text>
-                    </Pressable>
+                    </Pressable> */}
 
                </View>
-               <Footer />
+               {/* <Footer /> */}
           </ScrollView>
      )
 }

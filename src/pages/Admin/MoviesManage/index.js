@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { StyleSheet, View, ScrollView, Text, Image, TextInput, Alert, TouchableOpacity, Button } from 'react-native'
 import spider from '../../../assets/image/spider.png'
+import dr from '../../../assets/image/strange.jpg'
 import axios from 'axios'
 
 const OutputMovies = ({
@@ -44,10 +45,15 @@ const OutputMovies = ({
                                    resizeMode: 'cover',
                                    width: 160,
                                    height: 245
-                              }} source={{
-                                   uri: `${cover}`
+                              }} 
+                              source={dr}
+                              // source={{
+                                   // uri: `${cover}`
+
                                    // uri: `https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80`
-                              }} />
+                              // }} 
+
+                              />
                     </View>
                     <Text style={styles.output}>
                          {`Release Date : ${release_date}`}
@@ -90,7 +96,8 @@ const MoviesManage = ({ navigation }) => {
 
      useEffect(() => {
           getData();
-     })
+          console.log(`ini movies `,movies)
+     }, [])
 
      const submit = () => {
           const data = {
@@ -105,7 +112,11 @@ const MoviesManage = ({ navigation }) => {
           console.log(`data before send : `, data)
 
           if (button === `Simpan`) {
-               axios.post(`http://10.0.2.2:2022/movies`, data)
+               axios.post(
+                    // `http://10.0.2.2:2022/movies`, data
+                    `http://10.0.2.2:2022/movies`, data
+
+               )
                     .then(res => {
                          console.log(`res : `, res);
                          console.log(`res : `, res.data);

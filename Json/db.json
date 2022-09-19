@@ -1,44 +1,28 @@
 {
   "profile-user": [
     {
-      "id": 1,
       "first_name": "Muhamad",
-      "last_name": "Nahrowi",
+      "last_name": "Nahrowi 100",
       "phone_number": "0219001928988",
       "email": "han@gamil.com",
-      "password": "nahrowiTampan123"
+      "password": "nahrowiTampan123",
+      "id": 1
     },
     {
-      "first_name": "Muhamad",
-      "last_name": "Qurniawan",
-      "phone_number": "0219001928988",
-      "email": "zainudin@gamil.com",
-      "password": "nahrowiTampan123",
+      "first_name": "Nahrowi",
+      "last_name": "Muhamad",
+      "phone_number": "22222",
+      "email": "@sabar.com",
+      "password": "123456",
       "id": 2
     },
     {
-      "first_name": "Bagus",
-      "last_name": "Pratama",
-      "phone_number": "0222182333",
-      "email": "han@gmail.com",
-      "password": "saaysukaikan",
-      "id": 3
-    },
-    {
       "first_name": "Muhamad",
-      "last_name": "Qurniawan",
-      "phone_number": "0219001928988",
-      "email": "zainudin@gamil.com",
-      "password": "nahrowiTampan123",
-      "id": 4
-    },
-    {
-      "first_name": "Tri",
-      "last_name": "wulansari",
-      "phone_number": "023393484938",
-      "email": "tri@gmail.com",
-      "password": "sayaPecintabakso",
-      "id": 5
+      "last_name": "Nahrowi 7",
+      "phone_number": "0897777",
+      "email": "@han.asss",
+      "password": "trtr617661t5",
+      "id": 3
     }
   ],
   "users": [
@@ -77,84 +61,14 @@
   ],
   "movies": [
     {
-      "title": "Badman far home",
+      "title": "Doctor Strange in the Multinasional",
       "cover": "https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       "release_date": "2022-06-08",
       "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "nahrowi",
+      "description": "Doctor Strange in the Multiverse of Madness is a 2022 American superhero film based on Marvel Comics featuring the character Doctor Strange. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the sequel to Doctor Strange (2016) and the 28th film in the Marvel Cinematic Universe (MCU). The film was directed by Sam Raimi, written by Michael Waldron, and stars Benedict Cumberbatch as Stephen Strange, alongside Elizabeth Olsen, Chiwetel Ejiofor, Benedict Wong, Xochitl Gomez, Michael Stuhlbarg, and Rachel McAdams. In the film, Strange protects America Chavez (Gomez), a teenager capable of traveling the multiverse, from Wanda Maximoff (Olsen).",
+      "casts": "Tom Holland,Robert Downey Jr.,etc.",
+      "categories": "Adventure, Fiction, Science",
       "id": 3
-    },
-    {
-      "title": "Spiderman Homecoming",
-      "cover": "https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      "release_date": "2022-06-08",
-      "director": "Faisal, Mike",
-      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
-      "casts": "paul, roy",
-      "categories": "humor, fiction, adventure",
-      "id": 4
-    },
-    {
-      "title": "Spiderman Homecoming",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "Faisal, Mike",
-      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
-      "casts": "paul, roy",
-      "categories": "humor, fiction, adventure",
-      "id": 5
-    },
-    {
-      "title": "Spiderman Homecoming",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "Faisal, Mike",
-      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
-      "casts": "paul, roy",
-      "categories": "humor, fiction, adventure",
-      "id": 7
-    },
-    {
-      "title": "Spiderman Homecoming",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "Faisal, Mike",
-      "description": " centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben",
-      "casts": "paul, roy",
-      "categories": "humor, fiction, adventure",
-      "id": 8
-    },
-    {
-      "title": "Spiderman naik angkot",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "humor",
-      "id": 9
-    },
-    {
-      "title": "Spiderman naik angkot",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "humor",
-      "id": 10
-    },
-    {
-      "title": "aku jelek dan aku bangga 5",
-      "cover": "1657553925938-338978638-bayar.png",
-      "release_date": "2022-06-08",
-      "director": "han",
-      "description": "dah lah",
-      "casts": "aaaa",
-      "categories": "humor",
-      "id": 11
     }
   ]
 }

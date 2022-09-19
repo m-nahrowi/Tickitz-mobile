@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from 'react'
-import {StyleSheet, FlatList, ScrollView, View, Image, Text, TextInput, TouchableOpacity } from "react-native"
-import logo from '../../assets/image/bg.png'
-import spider from '../../assets/image/spider.png'
-import lion from '../../assets/image/lion.png'
-import widow from '../../assets/image/widow.png'
-import witches from '../../assets/image/witches.png'
-import tikit from '../../assets/icons/Tickitz.png'
-import ebu from '../../assets/icons/ebu.png'
-import cine from '../../assets/icons/cineOne.png'
-import hiflix from '../../assets/icons/hiflix.png'
-import fb from '../../assets/icons/fb.png'
-import ig from '../../assets/icons/ig.png'
+import { Alert,StyleSheet, FlatList, ScrollView, View, Image, Text, TextInput, TouchableOpacity, Pressable } from "react-native"
+// import logo from '../../assets/image/bg.png'
+// import spider from '../../assets/image/spider.png'
+// import lion from '../../assets/image/lion.png'
+// import widow from '../../assets/image/widow.png'
+// import witches from '../../assets/image/witches.png'
+// import tikit from '../../assets/icons/Tickitz.png'
+// import ebu from '../../assets/icons/ebu.png'
+// import cine from '../../assets/icons/cineOne.png'
+// import hiflix from '../../assets/icons/hiflix.png'
+// import fb from '../../assets/icons/fb.png'
+// import ig from '../../assets/iconss/ig.png'
 import tw from '../../assets/icons/twiter.png'
 import yt from '../../assets/icons/yt.png'
 import kanan from '../../assets/icons/kanan.png'
 import axios from 'axios'
+import strange from '../../assets/image/strange.jpg'
+import star from '../../assets/icons/star.png'
+import disney from '../../assets/image/disney_2.jpg'
+import marvel from '../../assets/image/marvel1.jpg'
+import xx1 from '../../assets/image/xx1.png'
+import cinepolis from '../../assets/image/Cinepolis.jpg'
+import cinema from '../../assets/image/cinema.jpeg'
+import messaging from '@react-native-firebase/messaging';
 
 const styles = StyleSheet.create({
-   titleText : 
-   { 
-    color: 'black',
-    marginBottom: 4, 
-    fontSize: 14, 
-    fontWeight: '600', 
-    textAlign: 'center', 
-    marginTop: 12,
-    width: 130
+   titleText:
+   {
+      color: 'black',
+      marginBottom: 4,
+      fontSize: 14,
+      fontWeight: '600',
+      textAlign: 'center',
+      marginTop: 12,
+      width: 130
    }
 
 })
@@ -35,26 +43,127 @@ const MovieList = (
       cover,
       title,
       categories,
-      navigation
+      navigation,
+      duration,
+      direction,
+      casts
    }
 ) => {
    return (
-      <ScrollView horizontal={false} style={{ flexDirection: 'row', margin: 24}}>
+      <ScrollView
+         // horizontal={false} 
+         style={{
+            // marginHorizontal: 
+            marginBottom: 50
+
+         }}>
          <TouchableOpacity
             onPress={() => navigation.navigate('MovieDetail')}>
-            <View style={{ padding: 16, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 6, marginRight: 16, alignSelf: 'center' }}>
-               <Image source={widow} width='120' height='185' />
-               <Text style={styles.titleText}>
-                  {title}
-               </Text>
-               <Text style={{ color: '#A0A3BD', fontSize: 11, textAlign: 'center' }}>
-                  {categories}
-               </Text>
-               <View style={{ borderWidth: 2, borderColor: '#5F2EEA', paddingHorizontal: 40, paddingVertical: 5, marginTop: 24, borderRadius: 4 }}>
-                  <Text style={{ color: '#5F2EEA' }}>
-                     Detail
-                  </Text>
+            <View
+               style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  // padding: 16, 
+                  borderWidth: 2,
+                  // borderColor: '#ffd700', 
+                  // borderRadius: 6,
+                  // marginRight: 16, 
+                  // alignSelf: 'center' 
+               }}>
+               <View>
+                  <Image
+                     style={{
+                        flex: 1,
+                        resizeMode: 'contain',
+                        height: 200,
+                        width: 200
+
+                     }} source={strange} />
                </View>
+               <View
+                  style={{
+                     flex: 3,
+                     flexDirection: 'column',
+                     alignContent: 'space-between'
+                  }}>
+                  <Text
+                     style={{
+                        fontSize: 16,
+                        color: 'white'
+                        // flex: 1
+                     }}>
+                     {title}
+                  </Text>
+                  <Text
+                     style={{
+                        marginTop: 5,
+                        color: 'white'
+                     }}>
+                     {duration}
+                  </Text>
+                  <Text style={{
+                     // flex: 1,
+                     marginTop: 80,
+                     color: '#A0A3BD',
+                     fontSize: 12,
+                     // textAlign: 'center'
+                  }}>
+                     {categories}
+                  </Text>
+                  <View style={{
+                     // flex: 1,
+                     borderWidth: 2,
+                     //  borderColor: '#ffd700', 
+                     //  paddingHorizontal: 40, 
+                     //  paddingVertical: 5, 
+                     //  marginTop: 24, 
+                     //  borderRadius: 4 
+                  }}>
+                     {/* <Text style={{
+                        marginTop: 30,
+                        color: '#ffd700'
+                     }}>
+                        Detail
+                     </Text> */}
+                  </View>
+                  <View style={{
+                     marginTop: 5,
+                     flexDirection: 'row'
+                  }}>
+                     <Image
+                        style={{
+                           resizeMode: 'contain',
+                           height: 18,
+                           width: 18
+                        }} source={star} />
+                     <Image
+                        style={{
+                           resizeMode: 'contain',
+                           height: 18,
+                           width: 18
+                        }} source={star} />
+                     <Image
+                        style={{
+                           resizeMode: 'contain',
+                           height: 18,
+                           width: 18
+                        }} source={star} />
+                     <Image
+                        style={{
+                           resizeMode: 'contain',
+                           height: 18,
+                           width: 18
+                        }} source={star} />
+                     <Image
+                        style={{
+                           resizeMode: 'contain',
+                           height: 18,
+                           width: 18
+                        }} source={star} />
+                  </View>
+
+               </View>
+
             </View>
          </TouchableOpacity>
       </ScrollView>
@@ -63,10 +172,19 @@ const MovieList = (
 }
 
 const LandingPage = ({ navigation }) => {
+   useEffect(() => {
+      const unsubscribe = messaging().onMessage(async remoteMessage => {
+        Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+      });
+  
+      return unsubscribe;
+    }, []);
+
+
    const [movies, setMovies] = useState([]);
    useEffect(() => {
       getData();
-   })
+   }, [])
 
    const getData = () => {
       axios.get(`http://10.0.2.2:2022/movies/`)
@@ -79,7 +197,9 @@ const LandingPage = ({ navigation }) => {
 
 
    return (
-      <ScrollView>
+      <ScrollView style={{
+         backgroundColor: '#010114'
+      }}>
 
          {/* <FlatList 
       data = {data}
@@ -97,117 +217,65 @@ const LandingPage = ({ navigation }) => {
          }}>
 
 
-            <Image source={tikit}
+            {/* <Image source={tikit}
                style={{
                   height: 30,
                   width: 100,
                   resizeMode: 'cover'
                }}
             />
-            <Image source={kanan} />
+            <Image source={kanan} /> */}
          </View>
 
          <View style={{
-            marginBottom: 167,
+            marginBottom: 50,
          }}>
 
-            <View
-               style={{
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-               }}>
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('ProfileDetail')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Profile
+
+            <TouchableOpacity
+               onPress={() => navigation.navigate('Route')}>
+               <View
+                  style={{
+                     // flexDirection: 'column',
+                     // justifyContent: 'space-between',
+                     // padding: 5,
+                     // margin: 10,
+                     // height:100,
+                     // width: 100,
+                     // borderWidth: 2,
+                     // borderColor: '#ffd700',
+                     // backgroundColor: '#ffd700'
+                  }}>
+                  <Text style={{
+                     borderWidth: 2,
+                     borderColor: '#ffd700',
+                     backgroundColor: '#ffd700',
+                     fontSize: 20,
+                     color: 'black',
+                     fontWeight: 'bold',
+                     // margin: 30,
+                     marginLeft: 25,
+                     padding: 5,
+                     borderRadius: 4,
+                     width: 100,
+                     textAlign: 'center'
+                  }}>
+                     Route
                   </Text>
-               </TouchableOpacity>
-
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('Login')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Login
-                  </Text>
-               </TouchableOpacity>
+               </View>
+            </TouchableOpacity>
 
 
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('Register')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Resgister
-                  </Text>
-               </TouchableOpacity>
-
-
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('Forgot')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Forgot
-                  </Text>
-               </TouchableOpacity>
-
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('Payment')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Payment
-                  </Text>
-               </TouchableOpacity>
-
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('MovieList')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Movie List
-                  </Text>
-               </TouchableOpacity>
-
-               {/* uji CRUD */}
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('TestCRUD')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     CRUD TEST
-                  </Text>
-               </TouchableOpacity>
-
-               {/* axios */}
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('AxiosApi')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Axios Test
-                  </Text>
-               </TouchableOpacity>
-
-               {/* Local API */}
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('LocalAPI')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Local API
-                  </Text>
-               </TouchableOpacity>
-
-               {/* Movies manage */}
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('MoviesManage')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     MoviesManage | Admin
-                  </Text>
-               </TouchableOpacity>
-
-               <TouchableOpacity
-                  onPress={() => navigation.navigate('QrCode')}>
-                  <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 30 }}>
-                     Generate QrCode
-                  </Text>
-               </TouchableOpacity>
-            </View>
 
 
             <View style={{
                marginLeft: 24,
-               marginBottom: 64,
-               marginTop: 57,
+               marginBottom: 80,
+               marginTop: 17,
             }}>
                <Text style={{
-                  color: '#A0A3BD',
+                  // color: '#ffd700',
+                  color: 'white',
                   fontSize: 14,
                   fontWeight: '400'
                }}>
@@ -215,7 +283,8 @@ const LandingPage = ({ navigation }) => {
                </Text>
                <Text style={{
                   fontSize: 32,
-                  color: '#5F2EEA',
+                  color: '#ffd700',
+                  // color: 'white',
                   fontWeight: '800',
                   // lineHeight: 18
                }}>
@@ -223,18 +292,143 @@ const LandingPage = ({ navigation }) => {
                </Text>
             </View>
 
+
             <View style={{
                alignItems: 'center',
                justifyContent: 'center'
             }}>
-               <Image source={logo} style={{
-                  width: 327, height: 327,
-
+               <Image source={strange} style={{
+                  // marginHorizontal: ,
+                  width: '100%', height: 450,
+                  resizeMode: 'contain'
                }} />
+            </View>
+            <View>
+               <ScrollView
+                  horizontal
+                  style={{
+                     marginHorizontal: 48,
+                     flexDirection: 'row'
+                  }}>
+                  <Image
+                     style={{
+                        height: 100,
+                        width: 100,
+                        resizeMode: 'contain',
+                        marginRight: 10,
+                        borderWidth: 1,
+                        // borderColor: 'red'
+                     }} source={xx1} />
+                  <Image
+                     style={{
+                        height: 100,
+                        width: 100,
+                        resizeMode: 'contain',
+                        marginRight: 10
+                     }} source={cinepolis} />
+                  <Image
+                     style={{
+                        height: 100,
+                        width: 100,
+                        resizeMode: 'contain',
+                        marginRight: 10
+                     }} source={xx1} />
+                  <Image
+                     style={{
+                        height: 100,
+                        width: 100,
+                        resizeMode: 'contain',
+                        marginRight: 10
+                     }} source={marvel} />
+
+               </ScrollView>
             </View>
          </View>
 
-         <View style={{
+         <ScrollView
+            horizontal={true}
+            style={{
+               marginBottom: 30,
+               marginHorizontal: 30,
+               flexDirection: 'row',
+               // justifyContent: 'space-evenly'
+            }}>
+            <Pressable
+               style={{
+                  flex: 1,
+                  borderWidth: 2,
+                  borderColor: '#ffd700',
+                  padding: 5,
+                  marginRight: 15,
+                  borderRadius: 4
+               }}>
+               <Text
+                  style={{
+                     color: 'white',
+                     fontWeight: 'bold',
+                     fontSize: 16
+                  }}>
+                  Trending
+               </Text>
+            </Pressable>
+            <Pressable
+               style={{
+                  flex: 1,
+                  borderWidth: 2,
+                  borderColor: '#ffd700',
+                  padding: 5,
+                  marginRight: 15,
+                  borderRadius: 4
+               }}>
+               <Text
+                  style={{
+                     color: 'white',
+                     fontWeight: 'bold',
+                     fontSize: 16
+                  }}>
+                  Adventure
+               </Text>
+            </Pressable>
+            <Pressable
+               style={{
+                  flex: 1,
+                  borderWidth: 2,
+                  borderColor: '#ffd700',
+                  padding: 5,
+                  marginRight: 15,
+                  borderRadius: 4
+               }}>
+               <Text
+                  style={{
+                     color: 'white',
+                     fontWeight: 'bold',
+                     fontSize: 16
+                  }}>
+                  Humor
+               </Text>
+            </Pressable>
+            <Pressable
+               style={{
+                  flex: 1,
+                  borderWidth: 2,
+                  borderColor: '#ffd700',
+                  padding: 5,
+                  marginRight: 15,
+                  borderRadius: 4
+               }}>
+               <Text
+                  style={{
+                     color: 'white',
+                     fontWeight: 'bold',
+                     fontSize: 16
+                  }}>
+                  Fiction
+               </Text>
+            </Pressable>
+
+         </ScrollView>
+
+         {/* <View style={{
             backgroundColor: '#D6D8E7',
             // marginHorizontal: 24
          }}>
@@ -296,9 +490,9 @@ const LandingPage = ({ navigation }) => {
             </View>
 
 
-         </View>
+         </View> */}
 
-         <View>
+         {/* <View>
             <View style={{
                flexDirection: 'row',
                marginTop: 48,
@@ -340,30 +534,33 @@ const LandingPage = ({ navigation }) => {
                </View>
             </View>
 
-         </View>
+         </View> */}
 
+         <ScrollView horizontal={false} style={{ backgroundColor: 'black' }}>
+            {movies.map(movie => {
+               return <MovieList
+                  title={movie.title}
+                  cover={movie.cover}
+                  categories={movie.categories}
+                  duration={movie.duration}
+                  direction={movie.direction}
+                  casts={movie.casts}
+                  navigation={navigation}
+               />
+            })}
 
-         {movies.map(movie => {
-            return <MovieList 
-               title={movie.title}
-               cover={movie.cover}
-               categories={movie.categories}
-               navigation={navigation}
-            />
-         })}
-
-
+         </ScrollView>
 
          <View style={{ marginTop: 72, }}>
-            <Text style={{ color: '#4E4B66', fontSize: 14, textAlign: 'center', marginTop: 48 }}>
+            <Text style={{ color: 'white', fontSize: 14, textAlign: 'center', marginTop: 48 }}>
                Be the vanguard of the
             </Text>
-            <Text style={{ color: '#5F2EEA', fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 42 }}>
+            <Text style={{ color: 'yellow', fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 42 }}>
                Moviegoers
             </Text>
 
             <View style={{ flexDirection: 'row', justifyContent: "center" }}>
-               <TextInput placeholder='Type your email' style={{ width: 263, height: 46, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 4, paddingHorizontal: 20 }} />
+               <TextInput placeholder='Type your email' style={{ width: 263, height: 46, borderWidth: 2, borderColor: '#DEDEDE', borderRadius: 4, paddingHorizontal: 20, color: 'white' }} />
 
 
             </View>
@@ -382,7 +579,7 @@ const LandingPage = ({ navigation }) => {
          </View>
 
 
-         <View style={{ marginLeft: 24, width: 252 }}>
+         {/* <View style={{ marginLeft: 24, width: 252 }}>
             <Image source={tikit}
                style={{
                   height: 40,
@@ -393,9 +590,9 @@ const LandingPage = ({ navigation }) => {
                Stop waiting in line. Buy tickets
                conveniently, watch movies quietly.
             </Text>
-         </View>
+         </View> */}
 
-         <View style={{ marginLeft: 24 }}>
+         {/* <View style={{ marginLeft: 24 }}>
             <Text style={{ fontWeight: '600', color: 'black', fontSize: 16, marginTop: 42, marginBottom: 12 }}>
                Explore
             </Text>
@@ -430,7 +627,7 @@ const LandingPage = ({ navigation }) => {
             <Text style={{ marginBottom: 40 }}>
                © 2020 Tickitz. All Rights Reserved.
             </Text>
-         </View>
+         </View> */}
 
 
       </ScrollView>
